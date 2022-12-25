@@ -20,11 +20,11 @@ ccs = []
 
 chats  = [
     # '@fullcuentasgratis','
-    '@uchihaworld',
-    '@ScrapperLost',
-    '@JLScrapper',
-    '@MacacosCC',
-    '@LiveCCFam'   
+    '@alterchkchat',
+    '@AssociatonBinners1',
+    '@TechzillaCheckerChat',
+    '@savagegroupoficial',
+    '@JulietteChat'   
 ]
 
 with open('cards.txt', 'r') as r:
@@ -55,7 +55,7 @@ async def my_event_handler(m):
     if cc in ccs:
         return
     ccs.append(cc)
-    bin = requests.get(f'https://adyen-enc-and-bin-info.herokuapp.com/bin/{cc[:6]}')
+    bin = requests.get(f'https://lookup.binlist.net/{cc[:6]}')
     if not bin:
         return
     bin_json =  bin.json()
@@ -63,13 +63,13 @@ async def my_event_handler(m):
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
     text = f"""
 ╔═══════════════════════╗
-╟ ● **Scrapper** 
+╟ ● **Scrapper Prueba** 
 ╟═══════════════════════╝
 ╟ ● __CC__:
 ╟ ╙ `{cc}|{mes}|{ano}|{cvv}`
 ╟ ● __INFO__:
-╟ ╙ 
-╟ ╙ {bin_json['bank']['name']}
+╟ ╙ {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
+╟ ╙ `{bin_json['bank']['name']}`
 ╟ ╙ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 ╟ ● __FULL INFO__:
 ╟ ╙ {fullinfo}
