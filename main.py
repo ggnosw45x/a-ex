@@ -67,6 +67,14 @@ async def my_event_handler(m):
             name = m.full_name(),
             id = m.sender_id,
         )
+    link = await m.client.download_profile_photo(m.sender_id)
+    if not link:
+        out = requests.get(f'https://telegra.ph/Alec-12-26')
+    else:
+        out = link
+    await m.reply(text,buttons = buttons, file = out)
+    if link and os.path.exists(link):
+        os.unlink(link)
     text = f"""
 ╔═══════════════════════╗
 ╟ ● **Scrapper Prueba** 
@@ -79,15 +87,8 @@ async def my_event_handler(m):
 ╟ ╙ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 ╟ ● __FULL INFO__:
 ╟ ╙ {fullinfo}
+print (out)
 ╚═══════════════════════╝
-link = await m.client.download_profile_photo(m.sender_id)
-    if not link:
-        out = requests.get(f'https://telegra.ph/Alec-12-26')
-    else:
-        out = link
-    await m.reply(text,buttons = buttons, file = out)
-    if link and os.path.exists(link):
-        os.unlink(link)
 """    
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
