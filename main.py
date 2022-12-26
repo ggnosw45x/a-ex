@@ -61,20 +61,9 @@ async def my_event_handler(m):
     bin_json =  bin.json()
     addr = real_random_address()
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
-    async def _(m,lang):
-        text = lang.format(
-            name = m.full_name(),
-            id = m.sender_id,
-        )
-    link = await m.client.download_profile_photo(m.sender_id)
-    if not link:
-        out = requests.get(f'https://telegra.ph/Alec-12-26')
-    else:
-        out = link
-    await m.reply(text,buttons = buttons, file = out)
-    if link and os.path.exists(link):
-        os.unlink(link)
+    out = requests.get(f'https://telegra.ph/file/feb01f89c938300e0d2e3.jpg')
     text = f"""
+print (out)
 ╔═══════════════════════╗
 ╟ ● **Scrapper Prueba** 
 ╟═══════════════════════╝
@@ -84,11 +73,9 @@ async def my_event_handler(m):
 ╟ ╙ {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
 ╟ ╙ `{bin_json['bank']['name']}`
 ╟ ╙ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
-╟ ● __FULL INFO__:
-╟ ╙ {fullinfo}
-print (out)
 ╚═══════════════════════╝
-"""    
+""" 
+    print (out)
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
