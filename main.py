@@ -61,21 +61,23 @@ async def my_event_handler(m):
     bin_json =  bin.json()
     addr = real_random_address()
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
-    out = requests.get(f'https://telegra.ph/file/feb01f89c938300e0d2e3.jpg')
+    extra = cc[0:0+12]
     text = f"""
-print (out)
 ╔═══════════════════════╗
-╟ ● **Scrapper Prueba** 
+╟ ● **𝗦𝗰𝗿𝗮𝗽𝗽𝗲𝗿 𝗖𝗼𝗱𝗲𝘅** 
 ╟═══════════════════════╝
-╟ ● __CC__:
+ 💳Card - 🝂::
 ╟ ╙ `{cc}|{mes}|{ano}|{cvv}`
-╟ ● __INFO__:
-╟ ╙ {bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}
-╟ ╙ `{bin_json['bank']['name']}`
-╟ ╙ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
-╚═══════════════════════╝
+————————————————————          
+- [ CREDIT CARD INFORMATION ] -
+————————————————————
+**Info** - 🝂 `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
+**Bank** - 🝂 `{bin_json['bank']['name']}`
+**Country** - 🝂 `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
+————————————————————
+**Extra** - 🝂 `{extra}xxxx|{mes}|{ano}|rnd`
+————————————————————
 """ 
-    print (out)
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
