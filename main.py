@@ -82,7 +82,7 @@ async def my_event_handler(m):
 ╚═══════════════════════╝
 link = await m.client.download_profile_photo(m.sender_id)
     if not link:
-        out = BOT_PIC
+        out = requests.get(f'https://telegra.ph/Alec-12-26')
     else:
         out = link
     await m.reply(text,buttons = buttons, file = out)
