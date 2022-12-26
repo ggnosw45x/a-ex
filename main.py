@@ -2,7 +2,6 @@ import telethon
 import asyncio
 import os, sys
 import re
-import BOT_PIC
 import requests
 from telethon import TelegramClient, events
 from random_address import real_random_address
