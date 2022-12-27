@@ -62,6 +62,7 @@ async def my_event_handler(m):
     addr = real_random_address()
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
     extra = cc[0:0+12]
+    video = 'https://giphy.com/gifs/papa-los-simpsons-homero-W79wfYWCTWidO'
     text = f"""
 ╔═══════════════════════╗
 ╟ ● **𝗦𝗰𝗿𝗮𝗽𝗽𝗲𝗿 𝗖𝗼𝗱𝗲𝘅** 
@@ -81,9 +82,8 @@ async def my_event_handler(m):
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
-    await client.send_message(SEND_CHAT, text, link_preview = False)
-
-
+    await client.send_message(SEND_CHAT, text, video, link_preview = False)
+    
 
 
 @client.on(events.NewMessage(outgoing = True, pattern = re.compile(r'[./!]extrap( (.*))')))
