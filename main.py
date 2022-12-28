@@ -15,7 +15,7 @@ import random
 from defs import getUrl, getcards, phone
 API_ID =  20597671
 API_HASH = 'e89f2c4056dd402bef8299bce660cbcd'
-SEND_CHAT = '@ScrappCodex'
+SEND_CHAT = '@diegoespro'
 
 client = TelegramClient('session', API_ID, API_HASH)
 ccs = []
