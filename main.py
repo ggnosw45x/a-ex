@@ -22,11 +22,23 @@ ccs = []
 
 chats  = [
     # '@fullcuentasgratis','
-    '@alterchkchat',
-    '@AssociatonBinners1',
-    '@TechzillaCheckerChat',
-    '@savagegroupoficial',
-    '@JulietteChat'   
+    '@nexon_community',
+    '@SitesYCCS',
+    '@ddrbinscc',
+    '@LiveCCFam',
+    '@i_DropCCs',
+    '@CcsTeamUrban1',
+    '@Live_Credit_Card',
+    '@fullccshack',
+    '@CCsfreehere',                                                   
+    '@TeamBlckCard',
+    '@ItachiBins',
+    '@alvkslspqpqpqoqqq',
+    '@CCAUTH',
+    '@TEST123ND',
+    '@LOYOAS',
+    '@netflix_gratuit_1'
+
 ]
 
 with open('cards.txt', 'r') as r:
