@@ -69,7 +69,7 @@ async def my_event_handler(m):
     if cc in ccs:
         return
     ccs.append(cc)
-    bin = requests.get(f'https://lookup.binlist.net/{cc[:6]}')
+    bin = requests.get(f'https://www.binapi.co.uk/bin={cc[:6]}')
     if not bin:
         return
     bin_json =  bin.json()
@@ -83,9 +83,9 @@ async def my_event_handler(m):
 `{cc}|{mes}|{ano}|{cvv}`
 Status ➪ **Approved!** ✅
 ♡ INFO BIN CARD :
-**Info - 🝂** `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
-**Bank - 🝂** `{bin_json['bank']['name']}`
-**Country - 🝂** `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
+**Info - 🝂** `{bin_json['brand']} - {bin_json['type']} - {bin_json['level']}`
+**Bank - 🝂** `{bin_json['bank']}`
+**Country - 🝂** `{bin_json['country']} - {bin_json['code']} - {bin_json['flag']}`
 ————————————————
 **Extra - 🝂** `{extra}xxxx|{mes}|{ano}|rnd`
 """ 
