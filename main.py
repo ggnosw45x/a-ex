@@ -1,4 +1,6 @@
 import telethon
+import telegram
+import time
 import asyncio
 import os, sys
 import re
@@ -78,11 +80,11 @@ async def my_event_handler(m):
 **Extra** - 🝂 `{extra}xxxx|{mes}|{ano}|rnd`
 ————————————————————
 """ 
+    with open('photo.png', 'rb') as print:
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
-    await client.send_message(SEND_CHAT, text, link_preview = False)
-    await app.send_photo("me", "https://images.app.goo.gl/Th6fpDyZiem79TpP8")
+    await client.send_message(SEND_CHAT, text, photo.png)
 
 @client.on(events.NewMessage(outgoing = True, pattern = re.compile(r'[./!]extrap( (.*))')))
 async def my_event_handler(m):
