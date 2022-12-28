@@ -64,6 +64,7 @@ async def my_event_handler(m):
     addr = real_random_address()
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
     extra = cc[0:0+12]
+    photopng = requests.get(f'https://ibb.co/ScQf64B')
     text = f"""
 ╔═══════════════════════╗
 ╟ ● **𝗦𝗰𝗿𝗮𝗽𝗽𝗲𝗿 𝗖𝗼𝗱𝗲𝘅** 
@@ -80,11 +81,10 @@ async def my_event_handler(m):
 **Extra** - 🝂 `{extra}xxxx|{mes}|{ano}|rnd`
 ————————————————————
 """ 
-    with open('photo.png', 'rb') as print:
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
-    await client.send_message(SEND_CHAT, text, photo.png)
+    await client.send_message(SEND_CHAT, text, photopng)
 
 @client.on(events.NewMessage(outgoing = True, pattern = re.compile(r'[./!]extrap( (.*))')))
 async def my_event_handler(m):
