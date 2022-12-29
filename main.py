@@ -69,7 +69,7 @@ async def my_event_handler(m):
     if cc in ccs:
         return
     ccs.append(cc)
-    bin = requests.get(f'https://www.binapi.co.uk/bin={cc[:6]}')
+    bin = requests.get(f'https://lookup.binlist.net/{cc[:6]}')
     if not bin:
         return
     bin_json =  bin.json()
@@ -80,12 +80,12 @@ async def my_event_handler(m):
 ━━━━━━ ❴🇨🇴❵ ━━━━━━
    🌱 𝙎𝙘𝙧𝙖𝙥𝙥𝙚𝙧 𝙉𝙞𝙘𝙤 🌱
 ━━━━━━ ❴🇨🇴❵ ━━━━━━
-[●] Card ✅:
-♡━━━━ [INFORMATION ]━━━━
+[●] **Card** ✅:
+♡━━━━[**INFORMATION**]━━━━♡
 
-- ☘ VISA - CREDIT - CLASSIC
-- ❄️ COMMONWEALTH BANK OF AUSTRALIA
-- 🏙 AUSTRALIA - AU - 🇦🇺
+- ☘ `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
+- ❄️ `{bin_json['bank']['name']}`
+- 🏙 `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 
 ━━━━━━ ❴🇨🇴❵ ━━━━━━
 - [●] 𝗘𝘅𝘁𝗿𝗮 : `{extra}xxxx|{mes}|{ano}|rnd`
