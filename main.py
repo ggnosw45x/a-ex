@@ -14,7 +14,7 @@ import random
 
 from defs import getUrl, getcards, phone
 API_ID =  20597671
-API_HASH = 'e89f2c4056dd402bef8299bce660cbcd'
+API_HASH = '16c6538f21d16cbf861c30e581eba780'
 SEND_CHAT = -1001830627242
 
 client = TelegramClient('session', API_ID, API_HASH)
@@ -77,17 +77,19 @@ async def my_event_handler(m):
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
     extra = cc[0:0+12]
     text = f"""
-𝗦𝗰𝗿𝗮𝗽𝗽𝗲𝗿 𝗣𝗿𝗶𝘃𝗮𝘁𝗲 𝗖𝗼𝗱𝗲𝘅
-————————————————
-💳**Card - 🝂**
-`{cc}|{mes}|{ano}|{cvv}`
-Status ➪ **Approved!** ✅
-♡ INFO BIN CARD :
-**Info - 🝂** `{bin_json['brand']} - {bin_json['type']} - {bin_json['level']}`
-**Bank - 🝂** `{bin_json['bank']}`
-**Country - 🝂** `{bin_json['country']} - {bin_json['code']} - {bin_json['flag']}`
-————————————————
-**Extra - 🝂** `{extra}xxxx|{mes}|{ano}|rnd`
+━━━━━━ ❴🇨🇴❵ ━━━━━━
+   🌱 𝙎𝙘𝙧𝙖𝙥𝙥𝙚𝙧 𝙉𝙞𝙘𝙤 🌱
+━━━━━━ ❴🇨🇴❵ ━━━━━━
+[●] Card ✅:
+♡━━━━ [INFORMATION ]━━━━
+
+- ☘ VISA - CREDIT - CLASSIC - ❄️ COMMONWEALTH BANK OF AUSTRALIA
+- 🏙 AUSTRALIA - AU - 🇦🇺
+
+━━━━━━ ❴🇨🇴❵ ━━━━━━
+- [●] 𝗘𝘅𝘁𝗿𝗮 : `{extra}xxxx|{mes}|{ano}|rnd`
+- [●] 𝙊𝙬𝙣𝙚𝙧 : @NicolasRiosYTT
+━━━━━━ ❴🇨🇴❵ ━━━━━━
 """ 
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
