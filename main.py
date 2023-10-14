@@ -13,9 +13,9 @@ import random
 
 
 from defs import getUrl, getcards, phone
-API_ID =  23500211
-API_HASH = '16c6538f21d16cbf861c30e581eba780'
-SEND_CHAT = -1001880176512
+API_ID = 23625706
+API_HASH = 'ae2941bc9b8083bab142493bc43afe3f'
+SEND_CHAT = -1001944026093
 
 client = TelegramClient('session', API_ID, API_HASH)
 ccs = []
@@ -24,11 +24,14 @@ chats  = [
     # '@fullcuentasgratis','
     '@alterchkchat',
     '@AssociatonBinners1',
-    '@TechzillaCheckerChat',
+    '@TechzillaChkChat',
     '@savagegroupoficial',
     '@JulietteChat',
     '@BlindScrap',
-    '@RemChatChk'
+    '@RemChatChk',
+    '@JennaScrap',
+    '@CCSLIVES0'
+    
 
 ]
 
@@ -68,20 +71,23 @@ async def my_event_handler(m):
     fullinfo = f"{cc}|{mes}|{ano}|{cvv}|{names.get_full_name()}|{addr['address1']}|{addr['city']}|{addr['state']}|{addr['postalCode']}|{phone()}|dob: {datetime.strftime(datetime(random.randint(1960, 2005), random.randint(1, 12),random.randint(1, 28), ), '%Y-%m-%d')}|United States Of America"
     extra = cc[0:0+12]
     text = f"""
-━━━━━━ ❴🇨🇴❵ ━━━━━━
-   🌱 𝙎𝙘𝙧𝙖𝙥𝙥𝙚𝙧 𝙉𝙞𝙘𝙤 🌱
-━━━━━━ ❴🇨🇴❵ ━━━━━━
-[●] **Card** ✅:
-♡━━━━[**INFORMATION**]━━━━♡
-
-- ☘ `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
-- ❄️ `{bin_json['bank']['name']}`
-- 🏙 `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
-
-━━━━━━ ❴🇨🇴❵ ━━━━━━
-- [●] 𝗘𝘅𝘁𝗿𝗮 : `{extra}xxxx|{mes}|{ano}|rnd`
-- [●] 𝙊𝙬𝙣𝙚𝙧 : @NicolasRiosYTT
-━━━━━━ ❴🇨🇴❵ ━━━━━━
+‒‒‒‒‒‒‒‒‒‒‒⚡️‒‒‒‒‒‒‒‒‒‒‒
+꧁𓊈𒆜 𝕊𝕔𝕣𝕒𝕡𝕡𝕖𝕣 𝔾𝕠𝕒𝕥𝕤 𒆜𓊉꧂
+‒‒‒‒‒‒‒‒‒‒‒⚡️‒‒‒‒‒‒‒‒‒‒‒
+╟ [★] 𝗖𝗰 :
+{cc}|{mes}|{ano}|{cvv}
+╟𒆜 Status ➪ **Approved ✅**
+╟𒆜 Response ➪ **Approved**
+‒‒‒‒‒‒‒‒‒‒‒⚡️‒‒‒‒‒‒‒‒‒‒‒
+╟ [★] 𝗜𝗻𝗳𝗼 :
+╟ 🔎 `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
+╟ 🏦 `{bin_json['bank']['name']}`
+╟ 🌐 `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
+‒‒‒‒‒‒‒‒‒‒‒⚡️‒‒‒‒‒‒‒‒‒‒‒
+╟ [★] 𝗘𝘅𝘁𝗿𝗮 : `{extra}xxxx|{mes}|{ano}|rnd`
+╟ [★] 𝙊𝙬𝙣𝙚𝙧𝙨 : @Blankito08 
+‒‒‒‒‒‒‒‒‒‒‒⚡️‒‒‒‒‒‒‒‒‒‒‒
+𝙏𝙚𝙖𝙢 : @Goats_Check_Grup
 """ 
     print(f'{cc}|{mes}|{ano}|{cvv}')
     with open('cards.txt', 'a') as w:
