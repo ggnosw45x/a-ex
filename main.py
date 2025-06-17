@@ -13,24 +13,21 @@ import random
 
 
 from defs import getUrl, getcards, phone
-API_ID = 23625706
-API_HASH = 'ae2941bc9b8083bab142493bc43afe3f'
-SEND_CHAT = -1001944026093
+API_ID = 20597671 #tu api id bb
+API_HASH = 'e89f2c4056dd402bef8299bce660cbcd'  #tu api hash bb
+SEND_CHAT = -1001850450912 #chat o canal donde quieres que se envien las ccs
 
 client = TelegramClient('session', API_ID, API_HASH)
-ccs = []
 
 chats  = [
-    # '@fullcuentasgratis','
-    '@alterchkchat',
-    '@AssociatonBinners1',
-    '@TechzillaChkChat',
+    '@retroccs',
+    '@ritagroupOfc',
+    '@inkbins',
+    '@JohnnySinsChat',
     '@savagegroupoficial',
-    '@JulietteChat',
-    '@BlindScrap',
-    '@RemChatChk',
-    '@JennaScrap',
-    '@CCSLIVES0'
+    '@coredrops',
+    '@dSnowChat',
+    '@funcionabinsnewchat'
     
 
 ]
